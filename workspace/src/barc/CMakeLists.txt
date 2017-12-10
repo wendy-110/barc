@@ -51,6 +51,7 @@ add_message_files(
    Encoder.msg
    ECU.msg
    Z_KinBkMdl.msg
+   Input.msg
 )
 
 ## Generate services in the 'srv' folder
