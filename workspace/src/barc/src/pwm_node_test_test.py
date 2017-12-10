@@ -16,19 +16,22 @@ def talker():
 		out = Input()
 		out.accel = 10
 		
-		if numpy.mod(stepcount,4) == 0:
+		if numpy.mod(stepcount,5) == 0:
 			out.delta = 0
 			stepcount = stepcount+1
-		elif numpy.mod(stepcount,4) == 1:
+		elif numpy.mod(stepcount,5) == 1:
 			out.delta = 4			
 			stepcount = stepcount+1
-		elif numpy.mod(stepcount,4)== 2:
+		elif numpy.mod(stepcount,5)== 2:
 			out.delta = 0
 			stepcount = stepcount+1
-		elif numpy.mod(stepcount,4)== 3:
+		elif numpy.mod(stepcount,5)== 3:
 			out.delta = -4
 			stepcount = stepcount+1
-		disp(numpy.mod(stepcount,4))
+		elif numpy.mod(stepcount,5)== 4:
+			out.delta = 0
+			stepcount = stepcount+1
+		#rospy.loginfo(numpy.mod(stepcount,5))
 		pub.publish(out)
 		rate.sleep()
 
